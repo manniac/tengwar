@@ -60,9 +60,9 @@ function toTengwar2(roman_string, separator, transliterate) {
 	roman_string = roman_string.replace(/(\d)(\D)/g, "$1-$2");
 	
 	if (omode == "prefix") {
-    	roman_string = roman_string.replace(/([aeiou])-([bcdfghjklmnñpqrstvwxyz])/g,"$1$2");
+    	roman_string = roman_string.replace(/([aeiou])-([bcdfghjklmnÃ±pqrstvwxyz])/g,"$1$2");
 	} else {
-		roman_string = roman_string.replace(/([bcdfghjklmnñpqrstvwxyz])-([aeiou])/g,"$1$2");
+		roman_string = roman_string.replace(/([bcdfghjklmnÃ±pqrstvwxyz])-([aeiou])/g,"$1$2");
 	}
     
 	roman_string = roman_string.replace(/c-([ei])/g,"s-$1");    
@@ -133,16 +133,16 @@ function translitToTengwar(sillable, index, total, prev_sil, next_sil) {
     var tengwar_vowels = ["E","R","T","Y","U"]
     var tengwar_vowels_semi = ["D","F","G","H","J"]
 	var tengwar_vowels_wide = ["#","$","%","^","&"]
-    var roman_consonants = ["b","c","d","f","g","h","j","k","l","m","n","ñ","p","q","r","R","s","t","v","w","x","y","z"]
-    var tengwar_consonants = ["w","z","2","e","x","9","s","z","j","t","5","g","q","z","6","7","i","1","r","y","z|","`Û","K"]
+    var roman_consonants = ["b","c","d","f","g","h","j","k","l","m","n","Ã±","p","q","r","R","s","t","v","w","x","y","z"]
+    var tengwar_consonants = ["w","z","2","e","x","9","s","z","j","t","5","g","q","z","6","7","i","1","r","y","z|","`Ã›","K"]
     var roman_compounds = ["th","sh","rd","ng","gh","dh","zh","ld","ch","wh","ph"];
     var tengwar_compounds = ["3","d","u","b","v","4","f","m","a","o","Q"];
     var roman_punctuation = [",",".","!","?"];
-    var tengwar_punctuation = ["=","=-=","Á","À"]
+    var tengwar_punctuation = ["=","=-=","Ã","Ã€"]
     var roman_diphthongs = ["ai","ya","ei","ye","ui","yu","au","ou","yo","oi"]
     var tengwar_diphthongs = ["hE","hE","hR","hR","hU","hU","yE","yU","hY","hY"]
 	var roman_numerals = new String("0123456789")
-	var tengwar_numerals = new String("ðñòóôõö÷øù")
+	var tengwar_numerals = new String("Ã°Ã±Ã²Ã³Ã´ÃµÃ¶Ã·Ã¸Ã¹")
 
 	if (mode=="spanish") {
 		tengwar_consonants[roman_consonants.indexOf("j")] = "c";
@@ -178,9 +178,9 @@ function translitToTengwar(sillable, index, total, prev_sil, next_sil) {
 				} else {
 					if (scurl == "lacey") {
 						if (/^j/.test(prev_sil)) {
-							result = "¥";
+							result = "Â¥";
 						} else {
-							result = "£";
+							result = "Â£";
 						}
 					} else if (scurl == "regular") {
 						result = "+"
@@ -206,25 +206,25 @@ function translitToTengwar(sillable, index, total, prev_sil, next_sil) {
 				}
 			}
 		} else if (mode=="spanish" && sillable=="y") {
-			result = "`Û";
+			result = "`Ã›";
 	    } else {
             result = tengwar_consonants[roman_consonants.indexOf(sillable)];
         }
     } else if (sillable.length == 2) {
         if (sillable == "_e") {
             if (/^[trw]/.test(prev_sil)) {
-                result = "È"
+                result = "Ãˆ"
             } else {
-                result = "Ê";
+                result = "ÃŠ";
             }
         } else if (roman_compounds.indexOf(sillable) >= 0) {
             result = tengwar_compounds[roman_compounds.indexOf(sillable)];            
         } else if (sillable == "fo" && total == 0) {
 			result = "W";
 		} else if (sillable == "qu") {
-		    result = "zé";
+		    result = "zÃ©";
 		} else if (sillable == "gw") {
-		    result = "xè";
+		    result = "xÃ¨";
 		} else if (roman_diphthongs.indexOf(sillable) >= 0) {
 		    result = tengwar_diphthongs[roman_diphthongs.indexOf(sillable)];
 		} else if (/(aa|ee|ii|oo|uu)/.test(sillable)) {
@@ -242,7 +242,7 @@ function translitToTengwar(sillable, index, total, prev_sil, next_sil) {
 			if (mode=="english") {
 				if (scurl=="lacey" || scurl=="regular") {
 					result = "`" + tengwar_vowels_narrow[roman_vowels.indexOf(sillable.charAt(1))] + 
-						((scurl=="lacey" ? "£" : "_"));
+						((scurl=="lacey" ? "Â£" : "_"));
 				} else {
 					result = tengwar_consonants[roman_consonants.indexOf(sillable.charAt(0))] +
 						tengwar_vowels_semi[roman_vowels.indexOf(sillable.charAt(1))];
@@ -250,8 +250,8 @@ function translitToTengwar(sillable, index, total, prev_sil, next_sil) {
 			} else if (mode=="spanish") {
 				result = tengwar_consonants[roman_consonants.indexOf(sillable.charAt(0))] +   tengwar_vowels[roman_vowels.indexOf(sillable.charAt(1))];
 			}
-    	} else if (/[bcdfghjklmnñpqrRstvwxyz][aeiou]/.test(sillable)) {
-			if ((/[bdgjlmnñv]/.test(sillable.charAt(0))) || ((/[bdgjlmnñvy]/.test(sillable.charAt(0))) && mode=="spanish")) {
+    	} else if (/[bcdfghjklmnÃ±pqrRstvwxyz][aeiou]/.test(sillable)) {
+			if ((/[bdgjlmnÃ±v]/.test(sillable.charAt(0))) || ((/[bdgjlmnÃ±vy]/.test(sillable.charAt(0))) && mode=="spanish")) {
 				result = tengwar_consonants[roman_consonants.indexOf(sillable.charAt(0))] +  tengwar_vowels_wide[roman_vowels.indexOf(sillable.charAt(1))];
 			} else if (/[h]/.test(sillable.charAt(0))) {
 				result = tengwar_consonants[roman_consonants.indexOf(sillable.charAt(0))] +  tengwar_vowels_narrow[roman_vowels.indexOf(sillable.charAt(1))];
@@ -290,7 +290,7 @@ function translitToTengwar(sillable, index, total, prev_sil, next_sil) {
 				 ((/[bdfghjlmnv]/.test(sillable.charAt(0))) ? tengwar_vowels_wide[roman_vowels.indexOf(sillable.charAt(2))] : tengwar_vowels[roman_vowels.indexOf(sillable.charAt(2))]);
         } else if (/[bcdfghjklmnpqrstvwxyz]/.test(sillable.charAt(0)) && sillable.charAt(0) == sillable.charAt(1)) {
             result = tengwar_consonants[roman_consonants.indexOf(sillable.charAt(0))] +
-                  ( (/[bdghjmnv]/.test(sillable.charAt(0))) ? ":" : ((sillable.charAt(0) == "l") ? "°" : ";")) +
+                  ( (/[bdghjmnv]/.test(sillable.charAt(0))) ? ":" : ((sillable.charAt(0) == "l") ? "Â°" : ";")) +
                  ((/[bdfghjlmnv]/.test(sillable.charAt(0))) ? tengwar_vowels_wide[roman_vowels.indexOf(sillable.charAt(2))] : tengwar_vowels[roman_vowels.indexOf(sillable.charAt(2))]);
         }	 
     } else if (sillable.length == 4) {
