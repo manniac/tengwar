@@ -103,4 +103,5 @@ textarea:focus
 	font-weight:bold;
 	float:left;
 	text-align:right;
+	font-size: 14px;
 }
