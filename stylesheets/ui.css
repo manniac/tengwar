@@ -1,0 +1,156 @@
+body {
+	min-width:			1000px;
+	background-color:	#eee;
+	font-family: Georgia;
+}
+
+h1{
+	border-bottom:1px solid #ccc;
+	font-size:16px;
+	font-weight:bold;
+	letter-spacing:2px;
+	margin-bottom:20px;
+	text-transform:uppercase;
+	text-shadow: 2px 2px 2px #AAA;  
+}
+
+form{
+	background:#f7f7f7;
+	background:-moz-linear-gradient(90deg, #ccc, #fff); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc)); /* Webkit */
+	border:1px solid #aaa;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-box-shadow:0 0 15px #aaa;
+	-webkit-box-shadow:0 0 15px #aaa;
+	margin:60px auto 0;
+	padding:20px;
+	width:585px;
+}
+
+form div{
+	margin-bottom:10px;
+}
+
+form div.collapsible {
+  background: #444;
+  color: #FFF;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  padding:10px;
+  margin-top:5px;
+  display: none;
+}
+div.options {
+  background: #444;
+  color: #FFF;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  padding:10px;
+}
+
+label
+{
+	vertical-align: top;
+}
+
+textarea
+{
+	background: rgba(255, 255, 255, 0.9);
+	background:-moz-linear-gradient(90deg, #fff, #eee); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff), color-stop(0.2, #fff)); /* Webkit */
+	border:1px solid #aaa;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-box-shadow:0 0 3px #aaa;
+	-webkit-box-shadow:0 0 3px #aaa;
+	padding:5px;
+	resize: vertical;
+	font-family: Georgia;
+	font-size: 15px;
+}
+textarea:focus
+{	
+  border-color:#093c75;
+	-moz-box-shadow:0 0 3px #0459b7;
+	-webkit-box-shadow:0 0 3px #0459b7;
+	outline:none; 
+}
+
+textarea.tengwar {
+	font-family:		Tengwar Annatar, Tengwar Parmaite, Tenguar;
+	font-size: 			22px
+}	
+
+textarea.tengwar_italic {
+	font-family:		Tengwar Annatar, Tengwar Parmaite, Tenguar;
+	font-style: italic;
+	font-size: 			22px
+}
+
+.tengwar {
+	text-align: center;
+	font-family:		Tengwar Annatar, Tengwar Parmaite, Tenguar;
+	font-size: 			30px;
+	text-shadow: 2px 2px 2px #AAA; 
+}	
+
+.tengwar_italic {
+	text-align: center;
+	font-family:		Tengwar Annatar, Tengwar Parmaite, Tenguar;
+	font-style: italic;
+	font-size: 			30px;
+	text-shadow: 2px 2px 2px #AAA; 
+}
+
+input[type=button],
+a.submit{
+	background:#ddd;
+	background:-moz-linear-gradient(90deg, #0459b7, #08adff); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#08adff), to(#0459b7)); /* Webkit */
+	border:1px solid #093c75;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-box-shadow:0 1px 0 #fff;
+	-webkit-box-shadow:0 1px 0 #fff;
+	color:#fff;
+	cursor:pointer;
+	font-family:Arial,sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	/*margin-left:120px;*/
+	padding:5px 10px;
+	text-decoration:none;
+	text-shadow:0 1px 1px #333;
+	text-transform:uppercase;
+}
+input[type=button]:hover,
+a.submit:hover{
+	background:#eee;
+	background:-moz-linear-gradient(90deg, #067cd3, #0bcdff);
+	background:-webkit-gradient(linear, left top, left bottom, from(#0bcdff), to(#067cd3));
+	border-color:#093c75;
+	text-decoration:none;
+}
+input[type=button]:active,
+input[type=button]:focus,
+a.submit:active,
+a.submit:focus{
+	background:#ccc;
+	background:-moz-linear-gradient(90deg, #0bcdff, #067cd3);
+	background:-webkit-gradient(linear, left top, left bottom, from(#067cd3), to(#0bcdff));
+	border-color:#093c75;
+	outline:none;
+}
+input[type=button].Right
+{
+  float: right;
+}
+
+.option
+{
+	width:90px;
+	font-weight:bold;
+	float:left;
+	text-align:right;
+}

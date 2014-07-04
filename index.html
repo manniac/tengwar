@@ -1,10 +1,37 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="stylesheets/tengwar-anatar.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/tengwar-anatar.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/ui.css" />
+	<script src="scripts/mtengwar.js" type="text/javascript"></script>	
 </head>
-<body>
-	<div>Welcome to the tengwar transcriber</div>
-	<div id="output" class="tengwar annatar rendered">t5#"`Û</div>
-<body>
+<body onLoad='document.getElementById("roman").focus();'>	
 
+	<form>
+		<h1 style="text-align:center">Manny's Tengwar Transcriber</h1>
+		<div id="options" class="options">
+			<b>Transliteration Options:</b><br/>
+			<span class="option">S-Curl:</span>
+			<input type="radio" name="scurl" value="lacey" id="scurllacey" checked="checked" onClick="transcribeToTengwar()"/><label for="scurllacey">Lacey S-Curl</label>
+			<input type="radio" name="scurl" value="regular" id="scurlregular" onClick="transcribeToTengwar()"/><label for="scurlregular">Regular S-Curl</label>
+			<input type="radio" name="scurl" value="none" id="scurlnone" onClick="transcribeToTengwar()"/><label for="scurlnone">Don't use S-Curl</label> <br/>
+			<span class="option">Vowels:</span>
+			<input type="radio" name="vowel" value="prefix" id="vowelprefix" checked="checked" onClick="transcribeToTengwar()"/><label for="vowelprefix">Preceding(Sindarin/English)</label>
+			<input type="radio" name="vowel" value="suffix" id="vowelsuffix" onClick="transcribeToTengwar()"/><label for="vowelsuffix">Trailing(Quenya/Spanish)</label><br/>
+			<span class="option">Nuances:</span>
+			<input type="radio" name="mode" value="english" id="modeenglish" checked="checked" onClick="transcribeToTengwar()"/><label for="modeenglish">English</label>
+			<input type="radio" name="mode" value="spanish" id="modespanish" onClick="transcribeToTengwar()"/><label for="modespanish">Spanish</label>
+			
+		</div>	
+			
+		<div>
+			<label for="roman">Input</label>
+			<textarea cols="80" rows="4" class="roman" id="roman" placeholder="Enter english here" onkeyup="transcribeToTengwar()"></textarea>
+		</div>
+		<div>	
+			<label for="tengwar">Tengwar</label>
+			<input type="checkbox" name="useitalics" id="useitalics" onClick="toggleItalics()">Italics
+			<div id="tengwardiv" class="tengwar">1b$y6E zt^iR `N1U 97R`V</div>
+		</div>
+
+<body>
 </html>
