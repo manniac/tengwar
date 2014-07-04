@@ -7,7 +7,7 @@ body {
 
 h1{
 	border-bottom:1px solid #ccc;
-	font-size:16px;
+	font-size:20px;
 	font-weight:bold;
 	letter-spacing:2px;
 	margin-bottom:20px;
@@ -53,6 +53,7 @@ div.options {
 label
 {
 	vertical-align: top;
+	font-size: 14px;
 }
 
 textarea
