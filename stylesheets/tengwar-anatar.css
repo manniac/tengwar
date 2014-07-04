@@ -1,10 +1,10 @@
 @font-face{
 	font-family:Tengwar Annatar;
-	src:url(tengwar-annatar.eot);
-	src:url(tengwar-annatar.eot#iefix),
-	url(tengwar-annatar.woff) format('woff'),
-	url(tengwar-annatar.ttf) format('truetype'),
-	url(tengwar-annatar.svg#TengwarAnnatarItalic) format('svg');
+	src:url(../fonts/tengwar-annatar.eot);
+	src:url(../fonts/tengwar-annatar.eot#iefix),
+	url(../fonts/tengwar-annatar.woff) format('woff'),
+	url(../fonts/tengwar-annatar.ttf) format('truetype'),
+	url(../fonts/tengwar-annatar.svg#TengwarAnnatarItalic) format('svg');
 	font-weight:400;
 	font-style:normal
 }
