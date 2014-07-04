@@ -315,11 +315,3 @@ function toggleItalics() {
    
 }
 
-function toggleOptions() {
-    var e = document.getElementById("options");
-    if (e.style.display == "block") {
-        e.style.display = "none";
-    } else {
-        e.style.display = "block";
-    }
-}
