@@ -207,6 +207,8 @@ function translitToTengwar(sillable, index, total, prev_sil, next_sil) {
 			}
 		} else if (mode=="spanish" && sillable=="y") {
 			result = "`Û";
+		} else if (mode=="english" && sillable=="y") {
+			result = "Ì";
 	    } else {
             result = tengwar_consonants[roman_consonants.indexOf(sillable)];
         }
@@ -263,6 +265,9 @@ function translitToTengwar(sillable, index, total, prev_sil, next_sil) {
 		} else if (/[mn][bcdfghjklmnpqrRstvwxyz]/.test(sillable)) {
             result = tengwar_consonants[roman_consonants.indexOf(sillable.charAt(1))] + 
                 ((/[bdfghjlmnv]/.test(sillable.charAt(1))) ? "P" : "p");
+        } else if (/[bcdfghjklmnpqrstvwxyz]/.test(sillable.charAt(0)) && sillable.charAt(0) == sillable.charAt(1)) {
+            result = tengwar_consonants[roman_consonants.indexOf(sillable.charAt(0))] +
+                  ( (/[bdghjmnv]/.test(sillable.charAt(0))) ? ":" : ((sillable.charAt(0) == "l") ? "°" : (sillable.charAt(0) == "s") ? "p" : ";"));
         } else if (sillable  == "ss") {
             result = "8i";
         } else {
@@ -298,11 +303,12 @@ function translitToTengwar(sillable, index, total, prev_sil, next_sil) {
             result = tengwar_compounds[roman_compounds.indexOf(sillable.substr(0,2))] +
                 "p" + 
                 tengwar_vowels_semi[roman_vowels.indexOf(sillable.charAt(3))];
+        }
+        if (/ngw[aeiou]/.test(sillable)) {
+        	result = "x" + tengwar_vowels_wide[roman_vowels.indexOf(sillable.charAt(3))];
         } 
     }
-	
     return result;
-    
 }
 
 function toggleItalics() {

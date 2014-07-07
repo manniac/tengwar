@@ -29,6 +29,23 @@ form{
 	width:585px;
 }
 
+div.container {
+	background:#f7f7f7;
+	background:-moz-linear-gradient(90deg, #ccc, #fff); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc)); /* Webkit */
+	border:1px solid #aaa;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-box-shadow:0 0 15px #aaa;
+	-webkit-box-shadow:0 0 15px #aaa;
+	margin:60px auto 0;
+	padding:20px;
+	width:585px;	
+}
+div.question {
+	border-bottom: 1px solid #aaa;
+}
+
 form div{
 	margin-bottom:10px;
 }
