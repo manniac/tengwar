@@ -92,6 +92,8 @@ function toTengwar2(roman_string, separator, transliterate) {
     roman_string = roman_string.replace(/([aeiou]{2})([dgmntlrRsvp])/g,"$1-$2");
     roman_string = roman_string.replace(/([aeiou]{2})([aeiou])/g, "$1-$2");
     roman_string = roman_string.replace(/([aeiou])rr/g, "$1R");
+    roman_string = roman_string.replace(/([aeiou])([nm])([bcdfghjklpqrRstvwxz])/g, "$1$2-$3");
+    roman_string = roman_string.replace(/([aeiou])([nm])([mn])/g, "$1$2-$3");
 
     roman_string = roman_string.replace(/([aeiou])([mn])([tsgdzcwp])--h/g,"$1$2$3h");
     roman_string = roman_string.replace(/e-_/g,"e_");
