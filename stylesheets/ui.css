@@ -26,7 +26,7 @@ form{
 	-webkit-box-shadow:0 0 15px #aaa;
 	margin:60px auto 0;
 	padding:20px;
-	width:585px;
+	width:620px;
 }
 
 div.container {
@@ -40,10 +40,11 @@ div.container {
 	-webkit-box-shadow:0 0 15px #aaa;
 	margin:60px auto 0;
 	padding:20px;
-	width:585px;	
+	width:620px;	
 }
 div.question {
 	border-bottom: 1px solid #aaa;
+	padding-bottom: 10px;
 }
 
 form div{
@@ -87,7 +88,7 @@ textarea
 	resize: vertical;
 	font-family: Georgia;
 	font-size: 15px;
-	max-width: 585px;
+	max-width: 620px;
 }
 textarea:focus
 {	
@@ -111,9 +112,6 @@ textarea:focus
 	font-size: 			40px;
 	text-shadow: 2px 2px 2px #AAA; 
 }
-
-
-
 .option
 {
 	width:90px;
@@ -121,4 +119,57 @@ textarea:focus
 	float:left;
 	text-align:right;
 	font-size: 14px;
+}
+a.button{
+	background:#ddd;
+	background:-moz-linear-gradient(90deg, #0459b7, #08adff); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#08adff), to(#0459b7)); /* Webkit */
+	border:1px solid #093c75;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-box-shadow:0 1px 0 #fff;
+	-webkit-box-shadow:0 1px 0 #fff;
+	color:#fff;
+	cursor:pointer;
+	font-family:Arial,sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	/*margin-left:120px;*/
+	padding:5px 10px;
+	text-decoration:none;
+	text-shadow:0 1px 1px #333;
+	text-transform:uppercase;
+}
+a.button:hover{
+	background:#eee;
+	background:-moz-linear-gradient(90deg, #067cd3, #0bcdff);
+	background:-webkit-gradient(linear, left top, left bottom, from(#0bcdff), to(#067cd3));
+	border-color:#093c75;
+	text-decoration:none;
+}
+a.button:active,
+a.button:focus{
+	background:#ccc;
+	background:-moz-linear-gradient(90deg, #0bcdff, #067cd3);
+	background:-webkit-gradient(linear, left top, left bottom, from(#067cd3), to(#0bcdff));
+	border-color:#093c75;
+	outline:none;
+}
+
+a{
+	color:#aaa;
+	cursor:pointer;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0 1px 1px #333;
+	text-transform:uppercase;	
+}
+a:hover{
+	color:#ccc;
+	text-decoration:underline;
+}
+a:active,
+a:focus{
+	color:#fff;
+	text-decoration:underline;
 }

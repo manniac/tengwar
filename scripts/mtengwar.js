@@ -207,8 +207,9 @@ function translitToTengwar(sillable, index, total, prev_sil, next_sil) {
 			}
 		} else if (mode=="spanish" && sillable=="y") {
 			result = "`Û";
-		} else if (mode=="english" && sillable=="y") {
-			result = "Ì";
+		} else if (mode=="english" && sillable=="y" && next_sil == null ) {
+			//if preview silable is an l*
+			result = (/j.*/.test(prev_sil) ? "´" : "Ì");
 	    } else {
             result = tengwar_consonants[roman_consonants.indexOf(sillable)];
         }
